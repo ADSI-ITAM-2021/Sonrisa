@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+        crossorigin="anonymous">
+    <title>Agendar Cita</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
+                <h4 id="nombreBienvenida"></h4>
+                <br>
+                <p>
+                    Bienvenido/a a la página oficial para el registro de la vacuna contra el COVID-19. 
+                </p>
+                <p>
+                    Ya está cerca a completar
+                    su registro y agendar una cita para recibir la vacuna. Sólo necesitamos que verifique que los datos a continuación 
+                    están correctos.
+                </p>
+                <p>
+                    Marque con una palomita todos los datos que estén correctos y cuando termine pulse el botón de Aceptar.
+                </p>
+
+            </div>
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
+                <table id="tableConfirm" class="table">
+                    <tbody>
+                        <tr>
+                            <th class="col-md-4" scope="row">Nombre</th>
+                            <td id="nombreEnTable"></td>
+                            <td><input type="checkbox" name="checkNom" id="checkNom"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CURP</th>
+                            <td id="curpEnTable">ActualCURP</td>
+                            <td><input type="checkbox" name="checkCurp" id="checkCurp"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Fecha de Nacimiento</th>
+                            <td id="fdnEnTable">ActualFDN</td>
+                            <td><input type="checkbox" name="checkFDN" id="checkFDN"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Domicilio</th>
+                            <td>Av. Calle #NoSe</td>
+                            <td><input type="checkbox" name="checkDom" id="checkDom"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button type="submit" id="aceptar">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var nom = document.getElementById('nombreBienvenida');
+        var fechaDeNacimiento = localStorage.getItem("fechaNac");
+        var actualNom = localStorage.getItem("nombre");
+        var curp = localStorage.getItem("curp");
+
+        var yearBorn = parseInt(fechaDeNacimiento.split('-')[0]);
+        var d = new Date();
+        var year = d.getFullYear();
+
+        console.log(year - yearBorn);
+        nom.innerHTML = `Bienvenido, ${actualNom}`;
+
+        var nomTab = document.getElementById('nombreEnTable');
+        nomTab.innerHTML = actualNom;
+        var curpTab = document.getElementById('curpEnTable');
+        curpTab.innerHTML = curp;
+        var fdnTab = document.getElementById('fdnEnTable');
+        fdnTab.innerHTML = fechaDeNacimiento;
+
+
+        var btnAceptar = document.getElementById('aceptar');
+        btnAceptar.onclick = function () {
+            var checkNom = document.getElementById('checkNom').checked;
+            var checkCurp = document.getElementById('checkCurp').checked;
+            var checkFDN = document.getElementById('checkFDN').checked;
+            var checkDom = document.getElementById('checkDom').checked;
+
+            if (checkNom && checkCurp && checkFDN && checkDom) {
+                console.log(checkNom)
+                console.log("col")
+                if (confirm("El día de su cita es indispensable que lleve una identificación oficial que contenga su CURP.")) {
+                    location.href = "./Seguimiento.html";
+                }
+                
+            } else {
+                if (confirm("Se te mandará a la página principal para reingresar sus datos.")) {
+                    location.href = "./login.html"
+                }
+            }
+        }
+    </script>
+</body>
+</html>

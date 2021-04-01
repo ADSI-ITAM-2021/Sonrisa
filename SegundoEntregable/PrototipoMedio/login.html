@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro Vacuna</title>
+</head>
+<body>
+    <h2>Registrate para tu vacuna</h2>
+    
+    <div class="container">
+        <label for="nombre"><b>Nombre</b></label>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre" required>
+
+        <label for="curp"><b>CURP</b></label>
+        <input type="text" id="curp" name="curp" placeholder="Introduzca su CURP" required>
+
+        <label for="bday"><b>Fecha de Nacimiento</b></label>
+        <input type="date" name="bday" id="bday">
+
+        <button type="submit" id="submit">Login</button>
+        
+        <script>
+            var nombre = document.getElementById('nombre');
+            var curp = document.getElementById('curp');
+            var bday = document.getElementById('bday');
+            var submitBtn = document.getElementById('submit');
+
+            submitBtn.onclick = function () {
+                localStorage.setItem("fechaNac", bday.value);
+                localStorage.setItem("nombre", nombre.value);
+                localStorage.setItem("curp", curp.value);
+                
+                var yearBorn = parseInt(bday.value.split('-')[0]);
+                var d = new Date();
+                var year = d.getFullYear();
+                var edad = year - yearBorn
+
+                if (edad < 60) {
+                    alert("Una disculpa, todavía no estamos vacunando gente de su edad.")
+                } else {
+                    location.href = './AgendarCita.html';
+                }
+            }
+        </script>
+    </div>
+    <div class="container" style="background-color: #f1f1f1;">
+        <!-- <span class="curp"><a href="https://www.gob.mx/curp/" target="_blank">¿No conoces tu CURP?</a> </span> -->
+        <a href="https://www.gob.mx/curp/" target="_blank" style="float: right;">¿No conoces tu CURP?</a>
+    </div>
+</body>
+</html>
