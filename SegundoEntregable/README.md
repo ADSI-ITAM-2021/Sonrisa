@@ -1,5 +1,5 @@
 # Prototipo:
-[Prototipo de Página de Registro para Vacuna](https://cdn.rawgit.com/ADSI-ITAM-2021/Sonrisa/main/SegundoEntregable/PrototipoMedio/login.html)
+[Prototipo de Página de Registro para Vacuna](https://registrocovidsonrisa.tiiny.site/)
 
 # Entrevistas:
 
