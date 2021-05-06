@@ -1,26 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
     <title>Registro Vacuna</title>
 </head>
+
 <body>
-    <h2>Registrate para tu vacuna</h2>
-    
-    <div class="container">
-        <label for="nombre"><b>Nombre</b></label>
-        <input type="text" id="nombre" name="nombre" placeholder="Introduzca su nombre" required>
 
-        <label for="curp"><b>CURP</b></label>
-        <input type="text" id="curp" name="curp" placeholder="Introduzca su CURP" required>
+    <div class="text-center" style="background-color: #F0E9DA;">
+        <img class="p-3" src="./images/logoGob.png" alt="" style="width: 20%;">
+    </div>
 
-        <label for="bday"><b>Fecha de Nacimiento</b></label>
-        <input type="date" name="bday" id="bday">
+    <div style="background-color: #ededed;;">
+        <br><br><br>
+    </div>
+    <div class="container py-4 text-center" style="background-color: #F0E9DA;">
+        <h2>
+            Registrate para tu vacuna contra el COVID-19
+        </h2>
+    </div>
+    <div class="container" style="background-color: #ffffff;">
 
-        <button type="submit" id="submit">Login</button>
-        
+        <div class="row pb-3">
+            <div class="col">
+                <label for="nombre"><b>Nombre(s)</b></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            </div>
+            <div class="col">
+                <label for="apPat"><b>Apellido Paterno</b></label>
+                <input type="text" id="apPat" name="apPat" placeholder="Apellido Paterno" required>
+            </div>
+            <div class="col">
+                <label for="apMat"><b>Apellido Materno</b></label>
+                <input type="text" id="apMat" name="apMat" placeholder="Apellido Materno" required>
+            </div>
+        </div>
+
+        <div class="row pb-3">
+            <div class="col">
+                <label for="bday"><b>Fecha de Nacimiento</b></label>
+                <input type="date" name="bday" id="bday">
+            </div>
+            <div class="col">
+                <label for="curp"><b>CURP <a href="https://www.gob.mx/curp/" class="link-primary" target="_blank">¿No
+                            conoces tu
+                            CURP?</a></b></label>
+                <input type="text" id="curp" name="curp" placeholder="Introduzca su CURP" required>
+            </div>
+        </div>
+
+        <button type="submit" id="submit">Registrar</button>
+
         <script>
             var nombre = document.getElementById('nombre');
             var curp = document.getElementById('curp');
@@ -29,9 +65,9 @@
 
             submitBtn.onclick = function () {
                 localStorage.setItem("fechaNac", bday.value);
-                localStorage.setItem("nombre", nombre.value);
+                localStorage.setItem("nombre", nombre.value + " " + apPat.value + " " + apMat.value);
                 localStorage.setItem("curp", curp.value);
-                
+
                 var yearBorn = parseInt(bday.value.split('-')[0]);
                 var d = new Date();
                 var year = d.getFullYear();
@@ -45,9 +81,8 @@
             }
         </script>
     </div>
-    <div class="container" style="background-color: #f1f1f1;">
-        <!-- <span class="curp"><a href="https://www.gob.mx/curp/" target="_blank">¿No conoces tu CURP?</a> </span> -->
-        <a href="https://www.gob.mx/curp/" target="_blank" style="float: right;">¿No conoces tu CURP?</a>
+    <div class="container" style="height: 8px; background-color: #B69664;">
     </div>
 </body>
+
 </html>

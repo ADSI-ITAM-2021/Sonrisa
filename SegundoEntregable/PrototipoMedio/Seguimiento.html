@@ -11,22 +11,38 @@
 </head>
 
 <body>
+    <div class="text-center" style="background-color: #F0E9DA;">
+        <img class="p-3" src="./images/logoGob.png" alt="" style="width: 20%;">
+    </div>
+
     <div class="container">
         <div class="row">
             <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
-                <h4 id="nombreBienvenida">Seguimiento</h4>
-                <br>
                 <p>
-                    Favor de imprimir esta página ya que es la confirmación de su cita.
+                    <b style="color: green;"> Su registro fue exitoso. </b>
+                </p>
+                <p>
+                    Porfavor imprima esta página ya que es la confirmación de su cita. 
                 </p>
 
             </div>
+
             <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
-                <table class="table table-bordered">
+                <p style="color: gray;">Si desea que le mandemos la confirmación por correo porfavor introduzca su correo</p>
+                <input type="text" id="correo" name="correo" placeholder="Correo" required>
+                <button>Mandar Correo</button>
+            </div>
+
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
+                <table class="table table-bordered" style="font-size: 24px;">
                     <tbody>
                         <tr>
+                            <th class="col-md-4" scope="row">Folio</th>
+                            <td>192834-0037</td>
+                        </tr>
+                        <tr>
                             <th class="col-md-4" scope="row">Nombre</th>
-                            <td id="nombreEnTable">Nom</td>
+                            <td id="nombreEnTable">Nomr</td>
                         </tr>
                         <tr>
                             <th scope="row">CURP</th>
@@ -38,11 +54,11 @@
                         </tr>
                         <tr>
                             <th scope="row">Domicilio</th>
-                            <td>Av. Calle #NoSe</td>
+                            <td>Av. Domicilio Que Ingreso Previamente</td>
                         </tr>
                         <tr>
                             <th scope="row">Centro de Vacunación</th>
-                            <td>Cafeteria ITAM</td>
+                            <td>Centro de Vacunación X</td>
                         </tr>
                         <tr>
                             <th scope="row">Horario</th>
@@ -51,32 +67,37 @@
                     </tbody>
 
                 </table>
+
+            </div>
+
+
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
                 <button type="submit" id="imprimir">Imprimir</button>
-
-                <script>
-                    var fechaDeNacimiento = localStorage.getItem("fechaNac");
-                    var actualNom = localStorage.getItem("nombre");
-                    var curp = localStorage.getItem("curp");
-
-                    var yearBorn = parseInt(fechaDeNacimiento.split('-')[0]);
-                    var d = new Date();
-                    var year = d.getFullYear();
-
-                    var nomTab = document.getElementById('nombreEnTable');
-                    nomTab.innerHTML = actualNom;
-                    var curpTab = document.getElementById('curpEnTable');
-                    curpTab.innerHTML = curp;
-                    var fdnTab = document.getElementById('fdnEnTable');
-                    fdnTab.innerHTML = fechaDeNacimiento;
-
-                    var btnImprimir = document.getElementById('imprimir');
-                    btnImprimir.onclick = function () {
-                        print();
-                    }
-                </script>
             </div>
         </div>
     </div>
+
+    <script>
+        var fechaDeNacimiento = localStorage.getItem("fechaNac");
+        var actualNom = localStorage.getItem("nombre");
+        var curp = localStorage.getItem("curp");
+
+        var yearBorn = parseInt(fechaDeNacimiento.split('-')[0]);
+        var d = new Date();
+        var year = d.getFullYear();
+
+        var nomTab = document.getElementById('nombreEnTable');
+        nomTab.innerHTML = actualNom;
+        var curpTab = document.getElementById('curpEnTable');
+        curpTab.innerHTML = curp;
+        var fdnTab = document.getElementById('fdnEnTable');
+        fdnTab.innerHTML = fechaDeNacimiento;
+
+        var btnImprimir = document.getElementById('imprimir');
+        btnImprimir.onclick = function () {
+            print();
+        }
+    </script>
 </body>
 
 </html>

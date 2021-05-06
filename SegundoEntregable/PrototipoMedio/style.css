@@ -1,4 +1,4 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Roboto; background-color: #ededed;}
 form {border: 3px solid #f1f1f1;}
 
 input[type=text], input[type=password], input[type=date], input[type=checkbox] {
@@ -10,10 +10,31 @@ input[type=text], input[type=password], input[type=date], input[type=checkbox] {
   box-sizing: border-box;
 }
 
+input[type=checkbox] {
+  transform: scale(2);
+}
+
+.form-rounded {
+  border-radius: 1rem;
+}
+
+label {
+  font-size: 26px;
+}
+
+b {
+  color: #9F2141;
+}
+
+p {
+  font-size: 26px;
+}
+
 #bienvenida {
   padding: 5%;
   margin: 1%;
   text-align: center;
+  background-color: white;
 }
 
 #nombreBienvenida {
@@ -22,7 +43,7 @@ input[type=text], input[type=password], input[type=date], input[type=checkbox] {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #9F2141;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -58,4 +79,20 @@ img.avatar {
 span.curp {
     float: right;
     padding-top: 16px;
+}
+
+a:link {
+  color: #9F2141;
+}
+
+a:visited {
+  color: #9F2141;
+}
+
+a:hover {
+  color: #B69664;
+}
+
+a:active {
+  color: #8f7344;
 }

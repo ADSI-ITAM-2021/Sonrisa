@@ -11,27 +11,28 @@
         crossorigin="anonymous">
     <title>Agendar Cita</title>
 </head>
-<body>
+<style>
+</style>
+<body style="background-color: #ededed;">
+    <div class="text-center" style="background-color: #F0E9DA;">
+        <img class="p-3" src="./images/logoGob.png" alt="" style="width: 20%;">
+    </div>
+
     <div class="container">
         <div class="row">
             <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
-                <h4 id="nombreBienvenida"></h4>
+                <h4 id="nombreBienvenida" style="font-weight: bold;"></h4>
                 <br>
                 <p>
-                    Bienvenido/a a la página oficial para el registro de la vacuna contra el COVID-19. 
+                    Porfavor verifique que todos los datos que usted brindó son correctos.
                 </p>
                 <p>
-                    Ya está cerca a completar
-                    su registro y agendar una cita para recibir la vacuna. Sólo necesitamos que verifique que los datos a continuación 
-                    están correctos.
-                </p>
-                <p>
-                    Marque con una palomita todos los datos que estén correctos y cuando termine pulse el botón de Aceptar.
+                    <b>Marque con una palomita todos los datos que estén correctos</b>
                 </p>
 
             </div>
             <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
-                <table id="tableConfirm" class="table">
+                <table id="tableConfirm" class="table" style="font-size: 24px;">
                     <tbody>
                         <tr>
                             <th class="col-md-4" scope="row">Nombre</th>
@@ -39,24 +40,37 @@
                             <td><input type="checkbox" name="checkNom" id="checkNom"></td>
                         </tr>
                         <tr>
-                            <th scope="row">CURP</th>
-                            <td id="curpEnTable">ActualCURP</td>
-                            <td><input type="checkbox" name="checkCurp" id="checkCurp"></td>
-                        </tr>
-                        <tr>
                             <th scope="row">Fecha de Nacimiento</th>
                             <td id="fdnEnTable">ActualFDN</td>
                             <td><input type="checkbox" name="checkFDN" id="checkFDN"></td>
                         </tr>
                         <tr>
-                            <th scope="row">Domicilio</th>
-                            <td>Av. Calle #NoSe</td>
-                            <td><input type="checkbox" name="checkDom" id="checkDom"></td>
+                            <th scope="row">CURP</th>
+                            <td id="curpEnTable">ActualCURP</td>
+                            <td><input type="checkbox" name="checkCurp" id="checkCurp"></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <button type="submit" id="aceptar">Aceptar</button>
+            </div>
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
+
+                <div class="row">
+                    <div class="col">
+                        <p>Domicilio</p>
+                        <input type="text" id="dom" name="dom" placeholder="Domicilio" required>
+                        <img class="p-3" src="./images/fotoMapa.png" alt="" style="width: 100%;">
+
+                    </div>
+                    <div class="col">
+                        <p>Horario</p>
+                        <img class="p-3" src="./images/fotoHorario.png" alt="" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="bienvenida" class="col-lg-12 col-xl-12 bg-light text-dark">
+                <button type="submit" id="aceptar">Mis datos son correctos y deseo continuar</button>
             </div>
         </div>
     </div>
@@ -73,7 +87,7 @@
         var year = d.getFullYear();
 
         console.log(year - yearBorn);
-        nom.innerHTML = `Bienvenido, ${actualNom}`;
+        nom.innerHTML = `Bienvenido/a, ${actualNom}`;
 
         var nomTab = document.getElementById('nombreEnTable');
         nomTab.innerHTML = actualNom;
@@ -88,9 +102,8 @@
             var checkNom = document.getElementById('checkNom').checked;
             var checkCurp = document.getElementById('checkCurp').checked;
             var checkFDN = document.getElementById('checkFDN').checked;
-            var checkDom = document.getElementById('checkDom').checked;
 
-            if (checkNom && checkCurp && checkFDN && checkDom) {
+            if (checkNom && checkCurp && checkFDN) {
                 console.log(checkNom)
                 console.log("col")
                 if (confirm("El día de su cita es indispensable que lleve una identificación oficial que contenga su CURP.")) {
@@ -98,7 +111,7 @@
                 }
                 
             } else {
-                if (confirm("Se te mandará a la página principal para reingresar sus datos.")) {
+                if (confirm("Usted no ha confirmado que sus datos son correctos. Pulse 'OK' si desea regresar a la página principal.")) {
                     location.href = "./login.html"
                 }
             }
