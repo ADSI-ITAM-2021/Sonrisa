@@ -9,9 +9,10 @@
 - [Andres Quevedo 181336](https://github.com/quevedoa)
 
 ## Descripción
-### Objetivo 
+### Objetivos 
 
 Realizar todo el ciclo de Agile y UX con un proyecto web. Demostrar la importancia del manejo de producto para proyectos completos y que satisfagan al usuario.  
+Mostrar lo aprendido durante clases de ADSI en el semestre.
 
 ### Temática 
 
