@@ -1,6 +1,10 @@
 # Equipo Sonrisa
 
+## Prototipo
 [Página de Registro para la vacuna del COVID-19](https://registrocovidsonrisa.tiiny.site/)
+
+### Kanban Board utilizado para el prototipo
+[Kanban Board en Trello](https://trello.com/invite/b/eICxw7Ql/9b223cef9ccff238d495201d544699c9/prototipo-adsi)
 
 ## Integrantes
 - [Ana Cristina Sanchez 179484](https://github.com/anacris2802)
