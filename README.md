@@ -1,12 +1,12 @@
-# Sonrisa
+# Equipo Sonrisa
 
 [Página de Registro para la vacuna del COVID-19](https://registrocovidsonrisa.tiiny.site/)
 
 ## Integrantes
-- [Ana Cristina Sanchez]
-- ]Lucía Lizardi 181036]
-- [Mariano Franco 181335]
-- [Andres Quevedo 181336]
+- [Ana Cristina Sanchez](https://github.com/anacris2802)
+- [Lucía Lizardi 181036](https://github.com/LuciaLizardi)
+- [Mariano Franco 181335](https://github.com/marianofranco1998)
+- [Andres Quevedo 181336](https://github.com/quevedoa)
 
 ## Descripción
 ### Objetivo 
