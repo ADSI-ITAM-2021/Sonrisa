@@ -3,7 +3,7 @@
 [Página de Registro para la vacuna del COVID-19](https://registrocovidsonrisa.tiiny.site/)
 
 ## Integrantes
-- [Ana Cristina Sanchez](https://github.com/anacris2802)
+- [Ana Cristina Sanchez 179484](https://github.com/anacris2802)
 - [Lucía Lizardi 181036](https://github.com/LuciaLizardi)
 - [Mariano Franco 181335](https://github.com/marianofranco1998)
 - [Andres Quevedo 181336](https://github.com/quevedoa)
